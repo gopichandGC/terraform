@@ -19,11 +19,10 @@
 # }
 
 resource "aws_instance" "web" {
-  #count=11 # count.index is a special variable given by terraform
-  #count=length(var.instance_names)
+  
   ami           = var.ami_id # devops-practice
-  instance_type =  local.instance_type#local.instance_type #var.instance_names=="Mongodb"?"t3.small":"t2.micro"
+  instance_type =  local.instance_type
   tags={
-   Name= "locals"#var.instance_names[count.index]
+   Name= "locals"
   }
 }
